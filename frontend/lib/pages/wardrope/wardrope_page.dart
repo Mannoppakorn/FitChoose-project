@@ -168,8 +168,8 @@ class _WardropePageState extends State<WardropePage> {
         if (savedTypes.isNotEmpty) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-                content:
-                    Text('Image saved successfully: ${savedTypes.join(", ")}')),
+                content: Text(
+                    'Image saved successfullly: ${savedTypes.join(", ")}')),
           );
 
           // รีเฟรชหน้าจอเพื่อแสดงเสื้อผ้าใหม่

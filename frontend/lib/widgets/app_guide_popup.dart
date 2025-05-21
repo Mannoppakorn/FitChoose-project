@@ -100,16 +100,16 @@ class _AppGuidePopupState extends State<AppGuidePopup> {
             const SizedBox(height: 20),
             Row(
               children: [
-                Checkbox(
-                  value: _dontShowAgain,
-                  onChanged: (value) {
-                    setState(() {
-                      _dontShowAgain = value ?? false;
-                    });
-                  },
-                  activeColor: const Color(0xFF9B7EBD),
-                ),
-                const Text('Don\'t show again'),
+                // Checkbox(
+                //   value: _dontShowAgain,
+                //   onChanged: (value) {
+                //     setState(() {
+                //       _dontShowAgain = value ?? false;
+                //     });
+                //   },
+                //   activeColor: const Color(0xFF9B7EBD),
+                // ),
+                // const Text('Don\'t show again'),
                 const Spacer(),
                 if (_currentPage > 0)
                   TextButton(

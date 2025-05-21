@@ -33,7 +33,7 @@ class PyObjectId(ObjectId):
 
 class UserModel(BaseModel):
     # id: Optional[PyObjectId] = Field(default=None, alias="_id") #สามารถใช้ได้ทั้ง id และ _id
-    user_id: str
+    user_id: str = Field(...)
     username: str = Field(...) #(...) คือการที่ใน field ข้อมูลนั้นบังคับต้องมีค่า
     gender: str = Field(...) #(...) คือการที่ใน field ข้อมูลนั้นบังคับต้องมีค่า
     image_url: Optional[str] = None
@@ -41,18 +41,19 @@ class UserModel(BaseModel):
     created_at: str = datetime.utcnow().isoformat()
     update_at: str = datetime.utcnow().isoformat()
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        arbitrary_types_allowed=True,
-        json_encoders={ObjectId: str},
-        json_schema_extra={
-            "example": {
-                "username": "johndoe",
-                "gender": "Male",
-                "image_url": "https://example.com/images/profile.jpg"
-            }
-        }
-    )
+    # model_config = ConfigDict(
+    #     populate_by_name=True,
+    #     arbitrary_types_allowed=True,
+    #     json_encoders={ObjectId: str},
+    #     json_schema_extra={
+    #         "example": {
+    #             "user_id": "user123",
+    #             "username": "johndoe",
+    #             "gender": "Male",
+    #             "image_url": "https://example.com/images/profile.jpg"
+    #         }
+    #     }
+    # )
 
 
 class UserUpdateModel(BaseModel):

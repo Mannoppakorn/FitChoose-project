@@ -41,7 +41,7 @@ results: Dict[task_id, Any] = {}
 
 # เปลี่ยนจาก localhost:8000 เป็น IP ที่สามารถเข้าถึงได้จากอุปกรณ์มือถือ
 # ถ้าทดสอบบน emulator ให้ใช้ 10.0.2.2:8000
-SERVER_URL = "http://10.0.2.2:8000"  # สำหรับ Android Emulator
+SERVER_URL = "http://10.44.186.67:8000"  # สำหรับ Android Emulator
 # หรือใช้ IP ของเครื่องที่รัน server เช่น
 # SERVER_URL = "http://192.168.1.xxx:8000"  # แทนที่ xxx ด้วย IP จริงของเครื่อง
 
@@ -53,7 +53,7 @@ app.mount("/static", StaticFiles(directory="cassifier_image/gender"), name="stat
 
 # Virtual Try-On
 # External Try-On API Endpoint
-EXTERNAL_API_URL = "https://selective-aw-had-mothers.trycloudflare.com/tryon"
+EXTERNAL_API_URL = "https://consistently-promotion-hunger-addressed.trycloudflare.com/tryon"
 # Folder to store result
 RESULT_DIR = "C:/Users/User/Downloads/FitChoose/FitChoose/backend/virtual_tryon_results"
 os.makedirs(RESULT_DIR, exist_ok=True)
@@ -547,8 +547,16 @@ async def create_user(new_user: UserModel):
     """สร้างผู้ใช้ใหม่"""
     try:
         user_dict = dict(new_user)
+        # ลบฟิลด์ที่ไม่จำเป็นออก
         if "_id" in user_dict:
             del user_dict["_id"]
+        if "model_config" in user_dict:
+            del user_dict["model_config"]
+        
+        # ตรวจสอบว่ามี user_id ซ้ำหรือไม่
+        existing_user = user_collection.find_one({"user_id": user_dict["user_id"]})
+        if existing_user:
+            return {"status_code": 400, "message": "User with this user_id already exists"}
         # user_dict["created_at"] = int(datetime.timestamp(datetime.now()))
         # user_dict["updated_at"] = user_dict["created_at"]
         # user_dict["is_deleted"] = False
