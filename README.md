@@ -11,7 +11,7 @@ Technologies Used : Computer Vision, Object Detection, and Deep Learning
 
 ก่อนรันแอปพลิเคชัน ต้องดาวน์โหลด Wieght Model :
 
-1. ดาวน์โหลดไฟล์ `best_obj.pt`, `best_Upper_f1.pth`, `best_Lower_f1.pth` จาก[Google Drive](https://drive.google.com/drive/folders/1dj1uaZ2RpAiH4yuStRZxNes1uwjINBaa?usp=sharing)
+1. ดาวน์โหลดไฟล์ `best_obj.pt`, `best_Upper_f1.pth`, `best_Lower_f1.pth` จาก [Google Drive](https://drive.google.com/drive/folders/1dj1uaZ2RpAiH4yuStRZxNes1uwjINBaa?usp=sharing)
 2. สร้างโฟลเดอร์ `backend/weight.model/` ในโปรเจค
 3. วางไฟล์ Wieght Model ในโฟลเดอร์ `backend/weight.model/`
 4. clip_classifier.py วาง path `best_Upper_f1.pth`, `best_Lower_f1.pth`
