@@ -62,7 +62,7 @@ async def process_clip_upper_classification(task_id: str, image_file, model, pro
 def load_clip_lower_model():
     """Load and return the CLIP model and processor"""
     # Define the path to your model weights
-    weight_path = "C:/Users/User/Downloads/FitChoose/FitChoose/backend/CLIP_api/best_Upper_f1.pth"
+    weight_path = "C:/Users/User/Downloads/FitChoose/FitChoose/backend/CLIP_api/best_lower_f1.pth"
     clip_model = CLIPModel.from_pretrained("patrickjohncyh/fashion-clip")
     processor = CLIPProcessor.from_pretrained("patrickjohncyh/fashion-clip", use_fast=True)
 
