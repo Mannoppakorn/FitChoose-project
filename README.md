@@ -1,5 +1,10 @@
 # FitChooseIntegrate
-
+Developed multiple AI models integrated into the application, including
+ - A virtual try-on system enabling users to preview outfits on virtual avatars.
+ - A style-matching AI that recommends clothing items with compatible styles.
+ - A clothing detection model for automatic identification and tagging of apparel during data input.
+Conducted research on state-of-the-art technologies and academic papers to align the senior project with the defined objectives and ensure technical feasibility.
+Technologies Used : Computer Vision, Object Detection, and Deep Learning 
 ## การติดตั้ง
 
 ### ดาวน์โหลดไฟล์โมเดล
